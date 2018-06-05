@@ -10,11 +10,11 @@ npm install draft-js-select-image-plugin
 
 ## Usage
 This plugin exposes a button that integrates with the side toolbar.
-Rendering the image is out of scope, but in the following example you can see how to integrate `draft-js-image-plugin`.
 
 ```js
 import createSelectImagePlugin from 'draft-js-select-image-plugin';
 const selectImagePlugin = createSelectImagePlugin({});
+const { SelectImageButton } = selectImagePlugin;
 ```
 
 ## Configuration
@@ -23,6 +23,8 @@ const selectImagePlugin = createSelectImagePlugin({});
 | imageType | IMAGE   | Type of entity created when inserting the atomic block. By default it's the same value as `draft-js-image-plugin` |
 
 ## Integration
+Rendering the image is out of scope, but in the following example you can see how to integrate `draft-js-image-plugin`.
+
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
