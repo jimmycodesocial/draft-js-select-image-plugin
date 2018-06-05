@@ -9,7 +9,7 @@ npm install draft-js-select-image-plugin
 ```
 
 ## Usage
-This plugin displays a button that integrates with the side toolbar.
+This plugin exposes a button that integrates with the side toolbar.
 Rendering the image is out of scope, but in the following example you can see how to integrate `draft-js-image-plugin`.
 
 ```js
