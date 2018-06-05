@@ -26,6 +26,8 @@
     "type": "git",
     "url": "git+https://github.com/jimmycodesocial/draft-js-select-image-plugin.git"
   },
+  "license": "MIT",
+  "main": "lib/index.js",
   "scripts": {
     "clean": "node_modules/.bin/rimraf lib",
     "build": "npm run clean && npm run build:js",
@@ -68,6 +70,7 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
+    "decorate-component-with-props": "^1.1.0",
     "prop-types": "^15.6.1"
   }
 }
