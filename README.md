@@ -1,7 +1,7 @@
 # draft-js-select-image-plugin
 Embed a local image in your draft-js editor
 
-*This is a plugin for the `draft-js-plugins-editor`.*
+*This is a plugin for `draft-js-plugins-editor`.*
 
 ## Installation
 ```
@@ -9,8 +9,8 @@ npm install draft-js-select-image-plugin
 ```
 
 ## Usage
-This plugin exposes a button that integrates with the side toolbar.
-Render the image is out of the scope, but in the next example you can see how integrate `draft-js-image-plugin`.
+This plugin displays a button that integrates with the side toolbar.
+Rendering the image is out of scope, but in the following example you can see how to integrate `draft-js-image-plugin`.
 
 ```js
 import createSelectImagePlugin from 'draft-js-select-image-plugin';
@@ -20,7 +20,7 @@ const selectImagePlugin = createSelectImagePlugin({});
 ## Configuration
 | Param     | Default | Description                                                                                                  |
 |-----------|---------|--------------------------------------------------------------------------------------------------------------|
-| imageType | IMAGE   | Type of entity created when insert the atomic block. By default is the same value as `draft-js-image-plugin` |
+| imageType | IMAGE   | Type of entity created when inserting the atomic block. By default it's the same value as `draft-js-image-plugin` |
 
 ## Integration
 ```js
