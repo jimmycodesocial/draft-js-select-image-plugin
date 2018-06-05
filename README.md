@@ -3,10 +3,88 @@ Embed a local image in your draft-js editor
 
 *This is a plugin for the `draft-js-plugins-editor`.*
 
-Usage:
+## Installation
+```
+npm install draft-js-select-image-plugin
+```
+
+## Usage
+This plugin exposes a button that integrates with the side toolbar.
+Render the image is out of the scope, but in the next example you can see how integrate `draft-js-image-plugin`.
 
 ```js
 import createSelectImagePlugin from 'draft-js-select-image-plugin';
-
-const selectImagePlugin = createSelectImagePlugin();
+const selectImagePlugin = createSelectImagePlugin({});
 ```
+
+## Configuration
+| Param     | Default | Description                                                                                                  |
+|-----------|---------|--------------------------------------------------------------------------------------------------------------|
+| imageType | IMAGE   | Type of entity created when insert the atomic block. By default is the same value as `draft-js-image-plugin` |
+
+## Integration
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import Editor from 'draft-js-plugins-editor';
+import { EditorState } from 'draft-js';
+import createSideToolbarPlugin from 'draft-js-side-toolbar-plugin';
+import BlockTypeSelect from 'draft-js-side-toolbar-plugin/lib/components/BlockTypeSelect';
+
+import createImagePlugin from 'draft-js-image-plugin';
+import createSelectImagePlugin from 'draft-js-select-image-plugin';
+import 'draft-js-side-toolbar-plugin/lib/plugin.css';
+
+const imagePlugin = createImagePlugin();
+const selectImagePlugin = createSelectImagePlugin();
+const DefaultBlockTypeSelect = ({ getEditorState, setEditorState, theme }) => (
+  <BlockTypeSelect
+    getEditorState={getEditorState}
+    setEditorState={setEditorState}
+    theme={theme}
+    structure={[ 
+      selectImagePlugin.SelectImageButton
+    ]}
+  />
+);
+const sideToolbarPlugin = createSideToolbarPlugin({
+  structure: [DefaultBlockTypeSelect],
+});
+const { SideToolbar } = sideToolbarPlugin;
+
+class MyEditor extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      editorState: EditorState.createEmpty()
+    };
+    this.plugins = [
+      sideToolbarPlugin,
+      imagePlugin
+    ];
+  }
+
+  onChange = (editorState) => {
+    this.setState({ editorState });
+  }
+
+  render() {
+    return (
+      <div className="editor">
+        <Editor
+            editorState={this.state.editorState}
+            onChange={this.onChange}
+            plugins={this.plugins}
+            placeholder="Tell a story" />
+        <SideToolbar />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<MyEditor />, document.getElementById('root'));
+```
+
+# Acknowledge
+* Icon by: https://www.iconfinder.com/icons/290132/gallery_image_photo_photography_picture_pictures_icon
