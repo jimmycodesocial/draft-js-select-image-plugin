@@ -5,7 +5,7 @@ Embed a local image in your draft-js editor
 
 ## Installation
 ```
-npm install draft-js-select-image-plugin
+npm install @jimmycode/draft-js-select-image-plugin
 ```
 
 ## Usage

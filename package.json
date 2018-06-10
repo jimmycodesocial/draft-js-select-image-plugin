@@ -1,6 +1,6 @@
 {
-  "name": "draft-js-select-image-plugin",
-  "version": "0.5.1",
+  "name": "@jimmycode/draft-js-select-image-plugin",
+  "version": "0.5.2",
   "description": "Embed a local image in your draft-js editor",
   "keywords": [
     "draft-js",
