@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import unionClassNames from 'union-class-names';
+import { isCurrentBlockType } from '@jimmycode/draft-js-toolbox';
 
 /**
  * Icon by: https://www.iconfinder.com/icons/290132/gallery_image_photo_photography_picture_pictures_icon#size=24
@@ -32,20 +34,10 @@ class SelectImageButton extends React.PureComponent {
     }
   }
 
-  blockTypeIsActive = () => {
-    const editorState = this.props.getEditorState();
-    const blockType = editorState
-      .getCurrentContent()
-      .getBlockForKey(editorState.getSelection().getStartKey())
-      .getType();
-
-    return blockType === this.props.entityType;
-  };
-
   render() {
-    const { theme } = this.props;
-    const className = this.blockTypeIsActive()
-      ? `${theme.button} ${theme.active}`
+    const { theme, getEditorState, entityType } = this.props;
+    const className = isCurrentBlockType(getEditorState(), entityType)
+      ? unionClassNames(theme.button, theme.active)
       : theme.button;
 
     return (

@@ -1,12 +1,12 @@
 import decorateComponentWithProps from 'decorate-component-with-props';
-import SelectImageButton from './components/SelectImageButton';
-import addImage from './modifiers/addImage';
+import { addAtomicBlock } from '@jimmycode/draft-js-toolbox';
+import SelectImageButton from './components/Button';
 
 export default ({ imageType = 'IMAGE' } = {}) => {
   return {
     SelectImageButton: decorateComponentWithProps(SelectImageButton, {
       entityType: imageType,
-      addImage
+      addImage: addAtomicBlock
     })
   };
 };

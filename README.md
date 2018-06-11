@@ -12,7 +12,7 @@ npm install @jimmycode/draft-js-select-image-plugin
 This plugin exposes a button that integrates with the side toolbar.
 
 ```js
-import createSelectImagePlugin from 'draft-js-select-image-plugin';
+import createSelectImagePlugin from '@jimmycode/draft-js-select-image-plugin';
 const selectImagePlugin = createSelectImagePlugin({});
 const { SelectImageButton } = selectImagePlugin;
 ```
@@ -25,6 +25,10 @@ const { SelectImageButton } = selectImagePlugin;
 ## Integration
 Rendering the image is out of scope, but in the following example you can see how to integrate `draft-js-image-plugin`.
 
+```
+npm install draft-js-image-plugin
+```
+
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -33,10 +37,11 @@ import Editor from 'draft-js-plugins-editor';
 import { EditorState } from 'draft-js';
 import createSideToolbarPlugin from 'draft-js-side-toolbar-plugin';
 import BlockTypeSelect from 'draft-js-side-toolbar-plugin/lib/components/BlockTypeSelect';
-
 import createImagePlugin from 'draft-js-image-plugin';
-import createSelectImagePlugin from 'draft-js-select-image-plugin';
+import createSelectImagePlugin from '@jimmycode/draft-js-select-image-plugin';
+
 import 'draft-js-side-toolbar-plugin/lib/plugin.css';
+import 'draft-js-image-plugin/lib/plugin.css';
 
 const imagePlugin = createImagePlugin();
 const selectImagePlugin = createSelectImagePlugin();

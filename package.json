@@ -1,6 +1,6 @@
 {
   "name": "@jimmycode/draft-js-select-image-plugin",
-  "version": "0.5.2",
+  "version": "1.0.0",
   "description": "Embed a local image in your draft-js editor",
   "keywords": [
     "draft-js",
@@ -70,7 +70,9 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
+    "@jimmycode/draft-js-toolbox": "^0.5.5",
     "decorate-component-with-props": "^1.1.0",
-    "prop-types": "^15.6.1"
+    "prop-types": "^15.6.1",
+    "union-class-names": "^1.0.0"
   }
 }
